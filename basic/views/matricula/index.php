@@ -11,7 +11,8 @@ $this->title = 'My Yii Application';
 
         <h3>Choose one option</h3>
 
-        <a href="">Crear Curso</a> 
-        <a href="">Inscribir Alumno</a>
+        <a href="?r=matricula/crear_curso">Crear Curso</a> 
+        <br>
+        <a href="?r=matricula/inscribir_alumno">Inscribir Alumno</a>
     </div>
 </div>

@@ -62,9 +62,31 @@ class MatriculaController extends Controller
      */
     public function actionIndex()
     {
-    	return $this->render('index');        
+    	return $this->render('index');  
+
     }
 
+    public function actionCrear_curso()
+    {
+    	$model = new CursoForm();
+    	$curso = new Curso();
+
+    	if ($model->load(Yii::$app->request->post())) {
+    		$curso->nombre = $model->nombre; 
+    		$curso->descripcion = $model->descripcion; 
+
+    		$curso->save();
+
+    		return $this->render('creadoExito', [
+    				'curso'=>$curso,
+    			]);    		
+    	}
+
+    	return $this->render('crearCurso', [
+    			'model'=>$model,
+    		]);
+
+    }
 
 
 
